@@ -1,8 +1,8 @@
 # MotorAppP3-2 V1.0版本更改记录  
    提交者: 李贵东 日期: 2021年1月19日
 ## bug修复：俯仰轴回零标定失败。
-. 将Hall_Switch1()函数屏蔽，使用EXTI_Line4(stm32f10x_it.c)检测俯仰轴零位信息。
-       EXTI4_IRQHandler函数中，屏蔽My_SWStructure.Hall_SW1 = 1; 增加DevPara.Close_Switch1 = 1;
+1. 将Hall_Switch1()函数屏蔽，使用EXTI_Line4(stm32f10x_it.c)检测俯仰轴零位信息。
+2. EXTI4_IRQHandler函数中，屏蔽My_SWStructure.Hall_SW1 = 1; 增加DevPara.Close_Switch1 = 1;
 * 2、bug修复：方向轴回零标定失败。
        将POS_Switch1()函数屏蔽，使用EXTI_Line8(stm32f10x_it.c)检测方向轴零位信息。
        EXTI9_5_IRQHandler函数中，增加DevPara.Close_Switch3 =1;
