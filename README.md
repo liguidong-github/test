@@ -23,13 +23,13 @@
 #### 功能变更：电压欠压保护阈值改为26V。
 * ADC.h中，将宏定义Under_36Vol 改为 26。
 #### 功能完善：俯仰轴/方向轴 方向控制增加条件编译 。
-* user_conf.h中，增加 RETARDER条件编译项。
-  #if RETARDER == 1 
-    #define FY_MOTORDIR 1  
-    #define FW_MOTORDIR 1  
-  #elif RETARDER == 2
-    #define FY_MOTORDIR 0   
-    #define FW_MOTORDIR 1   
+* user_conf.h中，增加 RETARDER条件编译项。  
+  #if RETARDER == 1   
+    #define FY_MOTORDIR 1    
+    #define FW_MOTORDIR 1    
+  #elif RETARDER == 2  
+   #define FY_MOTORDIR 0    
+   #define FW_MOTORDIR 1     
   #endif
 
 # Sn1MotorPutter功能
