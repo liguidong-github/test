@@ -9,15 +9,15 @@
 * EXTI9_5_IRQHandler函数中，增加DevPara.Close_Switch3 =1;
 #### bug修复：当俯仰轴细分数为16时，跑不到上位机设置转的特定角度。
 * ClearResetMotor函数中，函数内增加4细分、16细分对应的管脚IO控制 (条件编译)。  
-   #if SUBDIV == 1 
-      Step1_M0_L;
-      Step1_M1_H;
-      Step1_M2_H;
-   #elif SUBDIV == 2
-      Step1_M0_H;
-      Step1_M1_H;
-      Step1_M2_L;
-    #endif		
+   #if SUBDIV == 1   
+     Step1_M0_L;  
+     Step1_M1_H;  
+     Step1_M2_H;  
+   #elif SUBDIV == 2  
+     Step1_M0_H;  
+     Step1_M1_H;  
+     Step1_M2_L;  
+  #endif		
 #### 功能变更：俯仰轴细分改为16，方向轴细分改为16。
 * user_conf.h中，将宏定义SUBDIV改为 2，推杆/方向轴细分数均设置为16。
 #### 功能变更：电压欠压保护阈值改为26V。
