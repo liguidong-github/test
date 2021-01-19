@@ -8,7 +8,7 @@
 * 将POS_Switch1()函数屏蔽，使用EXTI_Line8(stm32f10x_it.c)检测方向轴零位信息。
 * EXTI9_5_IRQHandler函数中，增加DevPara.Close_Switch3 =1;
 #### bug修复：当俯仰轴细分数为16时，跑不到上位机设置转的特定角度。
-* ClearResetMotor函数中，函数内增加4细分、16细分对应的管脚IO控制 (条件编译)。
+* ClearResetMotor函数中，函数内增加4细分、16细分对应的管脚IO控制 (条件编译)。  
    #if SUBDIV == 1 
       Step1_M0_L;
       Step1_M1_H;
