@@ -4,8 +4,8 @@
 1. 将Hall_Switch1()函数屏蔽，使用EXTI_Line4(stm32f10x_it.c)检测俯仰轴零位信息。
 2. EXTI4_IRQHandler函数中，屏蔽My_SWStructure.Hall_SW1 = 1; 增加DevPara.Close_Switch1 = 1;
 #### bug修复：方向轴回零标定失败。
-1. 将POS_Switch1()函数屏蔽，使用EXTI_Line8(stm32f10x_it.c)检测方向轴零位信息。
-2. EXTI9_5_IRQHandler函数中，增加DevPara.Close_Switch3 =1;
+* 1. 将POS_Switch1()函数屏蔽，使用EXTI_Line8(stm32f10x_it.c)检测方向轴零位信息。
+* 2. EXTI9_5_IRQHandler函数中，增加DevPara.Close_Switch3 =1;
 #### bug修复：当俯仰轴细分数为16时，跑不到上位机设置转的特定角度。
 1. ClearResetMotor函数中，函数内增加4细分、16细分对应的管脚IO控制 (条件编译)。
 #### 功能变更：俯仰轴细分改为16，方向轴细分改为16。
